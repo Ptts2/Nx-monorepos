@@ -1,0 +1,93 @@
+{
+  "projectType": "application",
+  "root": "apps/angular-app2",
+  "sourceRoot": "apps/angular-app2/src",
+  "prefix": "nx-webcomp-shared",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/angular-app2",
+        "index": "apps/angular-app2/src/index.html",
+        "main": "apps/angular-app2/src/main.ts",
+        "polyfills": "apps/angular-app2/src/polyfills.ts",
+        "tsConfig": "apps/angular-app2/tsconfig.app.json",
+        "assets": [
+          "apps/angular-app2/src/favicon.ico",
+          "apps/angular-app2/src/assets"
+        ],
+        "styles": ["apps/angular-app2/src/styles.css"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/angular-app2/src/environments/environment.ts",
+              "with": "apps/angular-app2/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "angular-app2:build:production"
+        },
+        "development": {
+          "browserTarget": "angular-app2:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "angular-app2:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/angular-app2/src/**/*.ts",
+          "apps/angular-app2/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/angular-app2"],
+      "options": {
+        "jestConfig": "apps/angular-app2/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
