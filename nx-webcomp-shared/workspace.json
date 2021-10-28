@@ -1,9 +1,0 @@
-{
-  "version": 2,
-  "projects": {
-    "angular-app": "apps/angular-app",
-    "angular-app-e2e": "apps/angular-app-e2e",
-    "angular-app2": "apps/angular-app2",
-    "angular-app2-e2e": "apps/angular-app2-e2e"
-  }
-}
