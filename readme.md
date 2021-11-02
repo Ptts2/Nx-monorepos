@@ -10,7 +10,7 @@ the page to become more and more difficult to change, update the technologies it
 
 A solution to this issues could be ussing Microfrontends, which are independent and isolated End-To-End features or fragments that can be built in any technology independently and that are joined in a single application, for that purpose we need to use agnostic Web Components which don't care about technologies and are easy to reuse and to maintain.
 
-## Why Monorepo
+## Why Monorepos
 
 Monorepo provides a series of advantages which are:
 - Simplifies code management
