@@ -28,6 +28,19 @@ existing app's tests or build time.
 ## The application
 
 This repo contains a sample application of two Single App Applications that share a Web Component.
+The Web Component is created in 
+[libs](https://github.com/Ptts2/Nx-monorepos/blob/6988ae17224d4b5e8fc8f2d8e90e27466f648421/libs/library/src/lib/styled-link/styled-link.element.ts#L1), 
+totally isolated from the other two applications. Then the component is used by both applications (regardless of its framework) importing it and using
+just like another HTML tag.
+
+Here we can see the [import of the library](https://github.com/Ptts2/Nx-monorepos/blob/6988ae17224d4b5e8fc8f2d8e90e27466f648421/apps/angular-app/src/main.ts#L1) 
+into one of our applications and how [it's used](https://github.com/Ptts2/Nx-monorepos/blob/6988ae17224d4b5e8fc8f2d8e90e27466f648421/apps/angular-app/src/app/app.component.html#L12) inside it.
+
+![Image of how the Web Components seems in the first app](https://i.imgur.com/8E9kHt3.png)
+
+And the exact same thing with the other application [import](https://github.com/Ptts2/Nx-monorepos/blob/6988ae17224d4b5e8fc8f2d8e90e27466f648421/apps/angular-app2/src/main.ts#L1) and how it's [used](https://github.com/Ptts2/Nx-monorepos/blob/6988ae17224d4b5e8fc8f2d8e90e27466f648421/apps/angular-app2/src/app/app.component.html#L1)
+
+![Image of how the Web Components seems in the second app](https://i.imgur.com/BPXWYOl.png)
 
 ## Try it
 
