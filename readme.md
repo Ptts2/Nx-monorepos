@@ -42,6 +42,11 @@ And the exact same thing with the other application [import](https://github.com/
 
 ![Image of how the Web Components seems in the second app](https://i.imgur.com/BPXWYOl.png)
 
+## Conclusions
+
+As we can see with reusable Web Components we can create a component that is agnostic to technologies and therefore is easy to move it to another technology, 
+add apps with other technologies to our SPA and keep using it, also it's easy to maintain and it makes much more painless to migrate from one technology from another.
+
 ## Try it
 
 ### Dependencies
